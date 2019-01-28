@@ -2,7 +2,7 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    component: () => import('@/views/index')
+    component: () => import('@/views/home')
   }
 ]
 export default routes

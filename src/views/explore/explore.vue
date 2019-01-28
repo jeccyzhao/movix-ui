@@ -3,8 +3,11 @@
 </template>
 
 <script>
-const explore = {
+export default {
   name: 'Explore'
 }
-export default explore
 </script>
+
+<style lang="less" scoped>
+  @import 'explore.less';
+</style>

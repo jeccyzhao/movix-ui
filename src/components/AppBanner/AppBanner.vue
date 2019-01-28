@@ -1,5 +1,11 @@
 <template>
-  <h1>Test</h1>
+  <div class="mini">
+    <div class="header">
+      <div class="header-bar">
+        <div class="container"/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
