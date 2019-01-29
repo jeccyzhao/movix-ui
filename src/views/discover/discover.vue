@@ -4,10 +4,10 @@
 
 <script>
 export default {
-  name: 'Explore'
+  name: 'Discover'
 }
 </script>
 
 <style lang="less" scoped>
-  @import 'explore.less';
+  @import 'discover.less';
 </style>
