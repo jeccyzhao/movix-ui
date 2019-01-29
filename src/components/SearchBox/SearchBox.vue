@@ -1,26 +1,35 @@
 <template>
   <AutoComplete
-    v-model="value4"
+    v-model="value"
     :placeholder="placeHolder"
     :size="size"
     icon="ios-search"
     @on-search="querySearch">
-    <div v-for="item in data4" :key="item.title" class="demo-auto-complete-item">
-      <div class="demo-auto-complete-group">
-        <span>{{ item.title }}</span>
-        <a href="https://www.google.com/search?q=iView" target="_blank">更多</a>
+    <Option v-for="item in items" :value="item.title" :key="item.imdbId">
+      <div class="item movie">
+        <div class="pic">
+          <img :src="item.poster" width="20" height="30" >
+        </div>
+        <div class="value">
+          <div class="title">{{ item.title }}</div>
+          <div class="desc">
+            <small>Year: {{ item.year }}</small>
+            <small style="color: rgb(159, 173, 31);">Rating: {{ item.rating }}</small>
+          </div>
+        </div>
       </div>
-      <Option v-for="option in item.children" :value="option.title" :key="option.title">
-        <span class="demo-auto-complete-title">{{ option.title }}</span>
-        <span class="demo-auto-complete-count">{{ option.count }} 人关注</span>
-      </Option>
-    </div>
-    <a href="https://www.google.com/search?q=iView" target="_blank" class="demo-auto-complete-more">查看所有结果</a>
+    </Option>
   </AutoComplete>
 </template>
 
+<style scoped>
+
+</style>
+
 <script>
 import { AutoComplete } from 'iview'
+import { getMovieByTitle } from '@/api/movie'
+
 export default {
   name: 'SearchBox',
   components: { AutoComplete },
@@ -36,31 +45,20 @@ export default {
   },
   data: function() {
     return {
-      value4: '',
-      data4: [
-        {
-          title: '话题',
-          children: [
-            {
-              title: 'iView',
-              count: 10000
-
-            },
-            {
-              title: 'iView UI',
-              count: 10600
-
-            }
-          ]
-        }
-      ]
+      value: '',
+      items: []
     }
   },
   computed: {
 
   },
   methods: {
-    querySearch: function(value) {
+    querySearch: function(query) {
+      getMovieByTitle(query).then(res => {
+        this.items = res.data.items
+      }).catch(err => {
+        console.log(err)
+      })
     }
   }
 }
