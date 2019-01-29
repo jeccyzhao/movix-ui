@@ -8,7 +8,7 @@
         <h3>Find a perfect match to your mood</h3>
       </div>
       <div class="search">
-        <SearchBox :place-holder="searchPlaceHolder" />
+        <SearchBox :place-holder="searchBoxPlaceHolder" :size="large" />
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@ export default {
     }
   },
   computed: {
-    searchPlaceHolder() {
+    searchBoxPlaceHolder() {
       return 'Enter a movie title or keyword...'
     }
   }
