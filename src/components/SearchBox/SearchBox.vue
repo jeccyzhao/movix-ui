@@ -11,9 +11,9 @@
           <img :src="item.poster" width="20" height="30" >
         </div>
         <div class="value">
-          <div class="title">{{ item.title }}</div>
+          <div class="title">{{ item.title }}<small>Year: {{ item.year }}</small></div>
           <div class="desc">
-            <small>Year: {{ item.year }}</small>
+            <small>Time: {{ item.time }}</small>
             <small style="color: rgb(159, 173, 31);">Rating: {{ item.rating }}</small>
           </div>
         </div>
