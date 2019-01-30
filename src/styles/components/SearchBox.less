@@ -1,3 +1,38 @@
-.searchbox {
-    
+.item {  
+    display: flex;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+
+    .pic {
+        margin-right: 5px;
+    }
+
+    .value {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 13px;
+        line-height: normal;
+
+        small {
+            margin-right: 5px;
+            color: #8391a5;
+        }
+
+        .desc {
+            margin-top: 2px;
+            font-size: 11px;
+            color: #aaa;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: normal;
+            padding: 2px 0px;
+            margin: 0;
+            cursor: pointer;
+            color: #48576a;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+    }
 }

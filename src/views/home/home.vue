@@ -17,6 +17,7 @@
 <script>
 import AppBanner from '@/components/AppBanner'
 import SearchBox from '@/components/SearchBox'
+
 export default {
   name: 'Home',
   components: {
