@@ -1,2 +1,2 @@
-import SearchBox from './SearchBox'
+import SearchBox from './searchbox'
 export default SearchBox

@@ -8,20 +8,18 @@
         <h3>Find a perfect match to your mood</h3>
       </div>
       <div class="search">
-        <SearchBox :place-holder="searchBoxPlaceHolder" :size="large" />
+        <SearchBox :place-holder="searchBoxPlaceHolder" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import AppBanner from '@/components/AppBanner'
-import SearchBox from '@/components/SearchBox'
+import SearchBox from '@/components/searchbox'
 
 export default {
   name: 'Home',
   components: {
-    AppBanner,
     SearchBox,
     Stars: {
       props: [],
